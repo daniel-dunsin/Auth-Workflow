@@ -119,7 +119,7 @@ const verifyOTP = asyncHandler(async (req, res, next) => {
     );
   }
   user.verified = true;
-  user.save();
+  await user.save();
   res.status(StatusCodes.OK).send({ msg: "User verified!" });
 });
 
